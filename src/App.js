@@ -4,7 +4,7 @@ import StarRating from "./StarRating";
 import { useMovies } from "./useMovies";
 
 const average = (arr) =>
-  arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+  arr?.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
 const KEY = "ba09a3f0";
 
