@@ -4,7 +4,7 @@ import StarRating from "./StarRating";
 import { useMovies } from "./useMovies";
 
 const average = (arr) =>
-  arr?.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+  arr?.reduce((acc, cur, i, arr) => acc + cur / arr?.length, 0);
 
 const KEY = "ba09a3f0";
 
@@ -173,7 +173,7 @@ function Search({ query, setQuery }) {
 function NumResults({ movies }) {
   return (
     <p className="num-results">
-      Found <strong>{movies.length}</strong> results
+      Found <strong>{movies?.length}</strong> results
     </p>
   );
 }
@@ -261,7 +261,7 @@ function WatchedSummary({ watched }) {
       <div>
         <p>
           <span>#️⃣</span>
-          <span>{watched.length} movies</span>
+          <span>{watched?.length} movies</span>
         </p>
         <p>
           <span>⭐️</span>
