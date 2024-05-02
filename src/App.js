@@ -251,9 +251,9 @@ function Movie({ movie, onSelectedMovie }) {
 }
 
 function WatchedSummary({ watched }) {
-  const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
-  const avgUserRating = average(watched.map((movie) => movie.userRating));
-  const avgRuntime = average(watched.map((movie) => movie.runtime));
+  const avgImdbRating = average(watched?.map((movie) => movie.imdbRating));
+  const avgUserRating = average(watched?.map((movie) => movie.userRating));
+  const avgRuntime = average(watched?.map((movie) => movie.runtime));
 
   return (
     <div className="summary">
@@ -293,7 +293,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     [userRating]
   );
 
-  const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
+  const isWatched = watched?.map((movie) => movie.imdbID).includes(selectedId);
 
   const watchedUserRating = watched.find(
     (movie) => movie.imdbID === selectedId
@@ -433,7 +433,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
 function WatchedMoviesList({ watched, onDeleteWatched }) {
   return (
     <ul className="list">
-      {watched.map((movie) => (
+      {watched?.map((movie) => (
         <WatchedMovie
           movie={movie}
           key={movie.imdbID}
